@@ -4,7 +4,7 @@ pipeline {
     environment {
         IS_DOCKERIMAGE = """${sh(
             returnStatus: true,
-            script: 'docker image inspect hello-world > /dev/null'
+            script: 'docker image inspect hadoop-build-env > /dev/null'
         )}"""
     }
 
