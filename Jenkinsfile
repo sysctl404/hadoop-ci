@@ -12,12 +12,12 @@ pipeline {
         stage('Prepare') {
             when { expression { IS_DOCKERIMAGE == '1' } }
             steps {
-                sh "docker build -t hadoop-build-env:latest hadoop-ci/hadoop-build-env/Dockerfile"
+                sh "docker build -t hadoop-build-env:latest hadoop-build-env/Dockerfile"
             }
         }
         stage('Build') {
             steps {
-                sh "docker build -o out hadoop-ci/Dockerfile"
+                sh "docker build -o ../hadoop ."
             }
         }
         stage('Deploy') {
