@@ -12,7 +12,7 @@ pipeline {
         stage('Prepare') {
             when { expression { IS_DOCKERIMAGE == '1' } }
             steps {
-                sh "docker build -t hadoop-build-env:latest hadoop-build-env/Dockerfile"
+                sh "docker build -t hadoop-build-env:latest hadoop-build-env"
             }
         }
         stage('Build') {
