@@ -21,7 +21,7 @@ pipeline {
             when { expression { IS_HADOOP_DISTR == 'false' } }
             steps {
                 echo "start building hadoop..."
-                sh "DOCKER_BUILDKIT=1 docker build -o /opt/hadoop-dist ."
+                sh "sudo DOCKER_BUILDKIT=1 docker build -o /opt/hadoop-dist ."
             }
         }
         stage('Deploy') {
