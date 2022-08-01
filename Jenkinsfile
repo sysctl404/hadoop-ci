@@ -28,8 +28,7 @@ pipeline {
             steps {
                 echo "deploying hadoop to localhost..."
                 sh "sudo tar xvf /opt/hadoop-dist/hadoop-3.1.3.tar.gz -C /opt"
-                sh "sudo cp config/core-site.xml /opt/hadoop-3.1.3/etc/hadoop/core-site.xml"
-                sh "sudo cp config/hdfs-site.xml /opt/hadoop-3.1.3/etc/hadoop/hdfs-site.xml"
+                sh "sudo cp config/* /opt/hadoop-3.1.3/etc/hadoop/"
                 sh "sudo JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64 /opt/hadoop-3.1.3/bin/hdfs namenode -format -force"
             }
         }
